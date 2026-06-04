@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KP Marketplace - Online Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- ===== LOADING ANIMATION ===== -->
+    <div class="loader">
+        <div class="kp-logo-animated">
+            <span class="kp-letter">K</span>
+            <span class="kp-letter p">P</span>
+            <div class="marketplace-text">MARKETPLACE</div>
+        </div>
+        <div class="loading-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <!-- ===== NOTIFICATION BAR ===== -->
+    <div class="notification-bar">
+        <div class="container">
+            <p><i class="fas fa-bolt"></i> Great KP Festival: Up to 70% off on Electronics & Fashion! <a href="#">Shop Now →</a></p>
+            <span class="close-notification">&times;</span>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-top">
+                <!-- KP Logo -->
+                <div class="logo-container">
+                    <a href="index.html" class="logo">
+                        <span class="kp-logo-main">kp</span>
+                        <span class="marketplace-text-logo">marketplace</span>
+                    </a>
+                </div>
+
+                <!-- Delivery Info -->
+                <div class="delivery-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span class="deliver-to">Deliver to</span>
+                        <span class="location">India</span>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-category">
+                        <select id="categorySelect">
+                            <option value="all">All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="home">Home & Kitchen</option>
+                            <option value="grocery">Grocery</option>
+                            <option value="beauty">Beauty</option>
+                        </select>
+                    </div>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search KP Marketplace">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="voice-search" id="voiceSearchBtn">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="header-actions">
+                    <div class="country-selector">
+                        <img src="https://flagcdn.com/w20/in.png" alt="India">
+                        <span>EN</span>
+                    </div>
+
+                    <div class="account-menu">
+                        <div class="account-trigger">
+                            <span class="line-1">Hello, sign in</span>
+                            <span class="line-2">Account & Lists</span>
+                        </div>
+                        <div class="account-dropdown">
+                            <div class="dropdown-section">
+                                <h3>Your Account</h3>
+                                <a href="login.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+                                <a href="#"><i class="fas fa-user-plus"></i> New customer? Start here</a>
+                            </div>
+                            <div class="dropdown-section">
+                                <h3>Your Lists</h3>
+                                <a href="#"><i class="fas fa-heart"></i> Wish List</a>
+                                <a href="#"><i class="fas fa-list"></i> Create a List</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="returns-orders">
+                        <span class="line-1">Returns</span>
+                        <span class="line-2">& Orders</span>
+                    </div>
+
+                    <div class="cart-container" id="cartBtn">
+                        <div class="cart-icon-wrapper">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </div>
+                        <span class="cart-text">Cart</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== NAVIGATION ===== -->
+            <nav class="main-nav">
+                <div class="container">
+                    <div class="nav-left">
+                        <a href="#" class="nav-item all-categories">
+                            <i class="fas fa-bars"></i>
+                            <span>All</span>
+                        </a>
+                        <a href="#" class="nav-item">Today's Deals</a>
+                        <a href="#" class="nav-item">Electronics</a>
+                        <a href="#" class="nav-item">Fashion</a>
+                        <a href="#" class="nav-item">Home & Kitchen</a>
+                        <a href="#" class="nav-item">KP Prime</a>
+                        <a href="#" class="nav-item">Grocery</a>
+                    </div>
+                    <div class="nav-right">
+                        <a href="#" class="nav-item">New Launches</a>
+                        <a href="#" class="nav-item">Customer Service</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO CAROUSEL ===== -->
+    <section class="hero-section">
+        <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Slide 1">
+                    <div class="slide-content">
+                        <h2>Great KP Festival Sale</h2>
+                        <p>Up to 70% off on electronics, fashion & more</p>
+                        <a href="#" class="slide-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Slide 2">
+                    <div class="slide-content">
+                        <h2>New Arrivals</h2>
+                        <p>Latest smartphones & gadgets</p>
+                        <a href="#" class="slide-btn">Explore Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Slide 3">
+                    <div class="slide-content">
+                        <h2>Fashion Fiesta</h2>
+                        <p>Min. 60% off on trending outfits</p>
+                        <a href="#" class="slide-btn">Shop Fashion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIES ===== -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="electronics">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Electronics</h3>
+                    <p>Up to 70% off</p>
+                </div>
+                <div class="category-card" data-category="fashion">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Fashion</h3>
+                    <p>Min. 50% off</p>
+                </div>
+                <div class="category-card" data-category="home">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home & Kitchen</h3>
+                    <p>From ₹299</p>
+                </div>
+                <div class="category-card" data-category="beauty">
+                    <div class="category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Beauty</h3>
+                    <p>Bestsellers</p>
+                </div>
+                <div class="category-card" data-category="grocery">
+                    <div class="category-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <h3>Grocery</h3>
+                    <p>Fresh food & more</p>
+                </div>
+                <div class="category-card" data-category="books">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Books</h3>
+                    <p>Bestsellers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TODAY'S DEALS ===== -->
+    <section class="deals-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Today's Deals</h2>
+                <a href="#" class="see-all">See all deals <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="deals-grid" id="dealsGrid">
+                <!-- Deals loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS SECTIONS ===== -->
+    <main class="products-main">
+        <div class="container">
+            <!-- Electronics -->
+            <section class="product-section">
+                <div class="section-header">
+                    <h2 class="section-title">Electronics</h2>
+                    <a href="#" class="see-all">View all <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="products-grid" id="electronicsGrid">
+                    <!-- Electronics loaded by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Fashion -->
+            <section class="product-section">
+                <div class="section-header">
+                    <h2 class="section-title">Fashion</h2>
+                    <a href="#" class="see-all">View all <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="products-grid" id="fashionGrid">
+                    <!-- Fashion loaded by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Home & Kitchen -->
+            <section class="product-section">
+                <div class="section-header">
+                    <h2 class="section-title">Home & Kitchen</h2>
+                    <a href="#" class="see-all">View all <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="products-grid" id="homeGrid">
+                    <!-- Home & Kitchen loaded by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Beauty -->
+            <section class="product-section">
+                <div class="section-header">
+                    <h2 class="section-title">Beauty & Personal Care</h2>
+                    <a href="#" class="see-all">View all <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="products-grid" id="beautyGrid">
+                    <!-- Beauty loaded by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Grocery -->
+            <section class="product-section">
+                <div class="section-header">
+                    <h2 class="section-title">Grocery & Gourmet</h2>
+                    <a href="#" class="see-all">View all <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="products-grid" id="groceryGrid">
+                    <!-- Grocery loaded by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>Get to Know Us</h3>
+                        <ul>
+                            <li><a href="#">About KP</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">KP Science</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect with Us</h3>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Make Money with Us</h3>
+                        <ul>
+                            <li><a href="#">Sell on KP</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Fulfilment by KP</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Let Us Help You</h3>
+                        <ul>
+                            <li><a href="#">Your Account</a></li>
+                            <li><a href="#">Returns Centre</a></li>
+                            <li><a href="#">100% Purchase Protection</a></li>
+                            <li><a href="#">KP App Download</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-middle">
+            <div class="container">
+                <div class="footer-logo">
+                    <span class="kp-logo-main">kp</span>
+                    <span class="marketplace-text-logo">marketplace</span>
+                </div>
+                <div class="footer-locales">
+                    <a href="#"><i class="fas fa-globe"></i> English</a>
+                    <a href="#"><i class="fas fa-rupee-sign"></i> INR - Indian Rupee</a>
+                    <a href="#"><i class="fas fa-flag"></i> India</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="#">Conditions of Use & Sale</a>
+                    <a href="#">Privacy Notice</a>
+                    <a href="#">Interest-Based Ads</a>
+                    <a href="#" id="copyrightYear">© 1996-2024, KP Marketplace, Inc. or its affiliates</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== CART SIDEBAR ===== -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <a href="#" class="shop-now-link">Shop now</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="cart-subtotal">₹0.00</span>
+            </div>
+            <a href="#" class="view-cart-btn">View Cart</a>
+            <a href="#" class="checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- ===== QUICK VIEW MODAL ===== -->
+    <div class="quick-view-modal" id="quickViewModal">
+        <div class="quick-view-content" id="quickViewContent">
+            <!-- Quick view content loaded by JavaScript -->
+        </div>
+        <div class="modal-overlay" id="modalOverlay"></div>
+    </div>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+        <span>Back to top</span>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
