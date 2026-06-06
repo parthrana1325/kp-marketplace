@@ -10,27 +10,55 @@ document.addEventListener('DOMContentLoaded', () => {
         container.classList.remove("right-panel-active");
     });
 
-    // SIGN IN FORM
-    const signinForm = document.getElementById('signinForm');
-    signinForm.addEventListener('submit', (event) => {
-        event.preventDefault(); 
+    // SIGN UP
+    document.getElementById("signupForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-        const email = document.getElementById('li-email').value;
-        const pass = document.getElementById('li-pass').value;
+        const name = document.getElementById("su-name").value;
+        const email = document.getElementById("su-email").value;
+        const password = document.getElementById("su-pass").value;
 
-        alert("Login Successful! Email: " + email);
+        const res = await fetch("http://localhost:5000/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await res.json();
+        alert(data.message);
     });
 
-    // SIGN UP FORM
-    const signupForm = document.getElementById('signupForm');
-    signupForm.addEventListener('submit', (event) => {
-        event.preventDefault(); 
+    // LOGIN
+    document.getElementById("signinForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-        const name = document.getElementById('su-name').value;
-        const email = document.getElementById('su-email').value;
-        const pass = document.getElementById('su-pass').value;
+        const email = document.getElementById("li-email").value;
+        const password = document.getElementById("li-pass").value;
 
-        alert("Account Created! Welcome " + name);
+        const res = await fetch("http://localhost:5000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+
+            alert("Login Successful");
+            if (data.user.role === "admin") {
+                window.location.href = "admin.html";
+            } else {
+                window.location.href = "index.html";
+            }
+
+        } else {
+            alert(data.message);
+        }
     });
 
 });

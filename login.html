@@ -8,54 +8,59 @@
 </head>
 <body>
 
-    <div class="container" id="container">
+<div class="container" id="container">
 
-        <!-- SIGN UP FORM -->
-        <div class="form-container sign-up-container">
-            <form id="signupForm">
-                <h1>Create Account</h1>
-                <span>use your email for registration</span>
+    <!-- SIGN UP FORM -->
+    <div class="form-container sign-up-container">
+        <form id="signupForm">
+            <h1>Create Account</h1>
+            <span>use your email for registration</span>
 
-                <input type="text" id="su-name" placeholder="Name" required />
-                <input type="email" id="su-email" placeholder="Email" required />
-                <input type="password" id="su-pass" placeholder="Password" required />
+            <input type="text" id="su-name" placeholder="Name" required />
+            <input type="email" id="su-email" placeholder="Email" required />
+            <input type="password" id="su-pass" placeholder="Password" required />
 
-                <button type="submit">Sign Up</button>
-            </form>
-        </div>
-
-        <!-- SIGN IN FORM -->
-        <div class="form-container sign-in-container">
-            <form id="signinForm">
-                <h1>Sign in</h1>
-                <span>or use your account</span>
-
-                <input type="email" id="li-email" placeholder="Email" required />
-                <input type="password" id="li-pass" placeholder="Password" required />
-
-                <a href="#">Forgot your password?</a>
-                <button type="submit">Sign In</button>
-            </form>
-        </div>
-
-        <!-- OVERLAY -->
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep shopping with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Shopper!</h1>
-                    <p>Enter your personal details and start your journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
-                </div>
-            </div>
-        </div>
-
+            <button type="submit">Sign Up</button>
+        </form>
     </div>
 
-    <script src="login.js"></script>
+    <!-- SIGN IN FORM -->
+    <div class="form-container sign-in-container">
+        <form id="signinForm">
+            <h1>Sign in</h1>
+            <span>or use your account</span>
+
+            <input type="email" id="li-email" placeholder="Email" required />
+            <input type="password" id="li-pass" placeholder="Password" required />
+
+            <a href="#">Forgot your password?</a>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep shopping with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Shopper!</h1>
+                <p>Enter your personal details and start your journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 🔥 ADD SUPABASE SCRIPT (IMPORTANT) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<!-- your logic -->
+<script src="login.js"></script>
+
 </body>
 </html>

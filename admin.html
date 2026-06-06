@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KP Marketplace Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>KP Marketplace Admin Panel</h1>
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+    </div>
+
+    <div class="stats-box">
+        <h2>Total Products</h2>
+        <span id="totalProducts">0</span>
+    </div>
+
+    <div class="add-product">
+
+        <h2>Add / Edit Product</h2>
+
+        <input
+        type="text"
+        id="name"
+        placeholder="Product Name">
+
+        <input
+        type="number"
+        id="price"
+        placeholder="Price">
+
+        <input
+        type="text"
+        id="image"
+        placeholder="Image URL">
+
+        <input
+        type="text"
+        id="category"
+        placeholder="Category">
+
+        <input
+        type="text"
+        id="description"
+        placeholder="Description">
+
+        <div style="margin-top:10px;">
+
+            <button onclick="addProduct()">
+                Add Product
+            </button>
+
+            <button
+            id="updateBtn"
+            onclick="updateProduct()">
+                Update Product
+            </button>
+
+        </div>
+
+        <br>
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Product..."
+        onkeyup="searchProduct()">
+
+    </div>
+
+    <div class="products-section">
+
+        <h2>Products List</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="productTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
